@@ -1,6 +1,6 @@
 <?php
 
-class PostCurlSender implements ISerner
+class PostCurlSender implements ISender
 {
     public function sendRequest($url, $data = array())
     {

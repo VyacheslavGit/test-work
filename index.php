@@ -8,7 +8,7 @@ $incPath = __DIR__ . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR;
 require $incPath . 'Demon.php';
 
 // post curl sender
-require $incPath . 'ISerner.php';
+require $incPath . 'ISender.php';
 require $incPath . 'PostCurlSender.php';
 
 // email notifier

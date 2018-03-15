@@ -34,7 +34,7 @@ class Demon
     /**
      * Demon constructor.
      */
-    public function __construct(ISerner $sender, INotifier $notifier)
+    public function __construct(ISender $sender, INotifier $notifier)
     {
         $this->timeStart = microtime(true);
 
