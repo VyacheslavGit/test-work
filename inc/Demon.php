@@ -144,7 +144,7 @@ class Demon
     /**
      * Stop demon progressing
      */
-    private function stop()
+    private function stop(): void
     {
         $this->stopDemon = true;
         $this->setExecutionTime();
@@ -153,10 +153,10 @@ class Demon
     /**
      * Get error message by response error code
      *
-     * @param $errorCode
+     * @param int|null $errorCode
      * @return string
      */
-    private function getResponseErrorMessage($errorCode): string
+    private function getResponseErrorMessage(?int $errorCode): string
     {
         $errorMessage = '';
         if (isset($this->responseErrorsList[$errorCode])) {
@@ -169,11 +169,11 @@ class Demon
     /**
      * Notify about error
      *
-     * @param int $errorCode
-     * @param string $errorMessage
+     * @param int|null $errorCode
+     * @param null|string $errorMessage
      * @return bool
      */
-    private function errorNotify(int $errorCode, string $errorMessage): bool
+    private function errorNotify(?int $errorCode, ?string $errorMessage): bool
     {
         $data = [
             'Code' => $errorCode,
@@ -187,9 +187,9 @@ class Demon
     /**
      * Show error
      *
-     * @param string $errorMessage
+     * @param null|string $errorMessage
      */
-    private function showError(string $errorMessage)
+    private function showError(?string $errorMessage): void
     {
         $message = sprintf('Error: %s', $errorMessage) . PHP_EOL;
         die($message);
@@ -207,10 +207,8 @@ class Demon
 
     /**
      * Set demon execution time
-     *
-     * @return null
      */
-    private function setExecutionTime()
+    private function setExecutionTime(): void
     {
         $this->executionTime = round(microtime(true) - $this->timeStart);
     }

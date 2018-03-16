@@ -5,12 +5,12 @@
  */
 class EmailNotifier implements INotifier
 {
-    const NOTIFY_EMAIL = 'v.shcherrbyna@andersenlab.com';
+    public const NOTIFY_EMAIL = 'v.shcherrbyna@andersenlab.com';
 
     /**
      * Notify to email
      *
-     * @param $subject
+     * @param string $subject
      * @param array $data
      * @return bool
      */
