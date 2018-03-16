@@ -1,27 +1,35 @@
 <?php
 
+/**
+ * Class EmailNotifier
+ */
 class EmailNotifier implements INotifier
 {
     const NOTIFY_EMAIL = 'v.shcherrbyna@andersenlab.com';
 
-    public function notify($subject, $data = array())
+    /**
+     * Notify to email
+     *
+     * @param $subject
+     * @param array $data
+     * @return bool
+     */
+    public function notify(string $subject, array $data = []): bool
     {
-         return mail(self::NOTIFY_EMAIL, $subject, $this->getBodyMessage($data));
+        return mail(self::NOTIFY_EMAIL, $subject, $this->getBodyMessage($data));
     }
 
     /**
      * Get email message body
-     * @param $data
+     *
+     * @param array $data
      * @return string
      */
-    private function getBodyMessage($data)
+    private function getBodyMessage(array $data): string
     {
-
         $body = '';
-        if (!empty($data)) {
-            foreach ($data as $key => $value) {
-                $body .= "$key: $value\n";
-            }
+        foreach ($data as $key => $value) {
+            $body .= "$key: $value\n";
         }
 
         return $body;

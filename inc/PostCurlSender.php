@@ -1,8 +1,18 @@
 <?php
 
+/**
+ * Class PostCurlSender
+ */
 class PostCurlSender implements ISender
 {
-    public function sendRequest($url, $data = array())
+    /**
+     * Send post curl request
+     *
+     * @param string $url
+     * @param array $data
+     * @return mixed
+     */
+    public function sendRequest(string $url, array $data = [])
     {
         $curl = curl_init();
 

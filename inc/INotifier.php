@@ -2,6 +2,6 @@
 
 interface INotifier
 {
-    public function notify($subject, $data = array());
+    public function notify(string $subject, array $data = []): bool;
 }
 

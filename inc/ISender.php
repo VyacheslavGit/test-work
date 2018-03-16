@@ -2,6 +2,6 @@
 
 interface ISender
 {
-    public function sendRequest($url, $data = array());
+    public function sendRequest(string $url, array $data = []);
 }
 
